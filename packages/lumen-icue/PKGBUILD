@@ -10,12 +10,12 @@ pkgdesc="Lighting, fan and AIO LCD screen control for Corsair iCUE LINK hardware
 arch=('x86_64')
 url="https://github.com/pxSean/lumen"
 license=('GPL-3.0-or-later')
-depends=('glibc' 'libgcc')
+depends=('glibc' 'libgcc' 'xdg-terminal-exec')
 makedepends=('cargo')
 optdepends=(
-  'nvidia-utils: GPU temperature and load on NVIDIA cards'
-  'xdg-terminal-exec: open the TUI from the app launcher'
+  'nvidia-utils: GPU readings on NVIDIA cards with the proprietary driver'
 )
+options=('!lto')
 install=lumen-icue.install
 source=("$pkgname-$pkgver.tar.gz::https://github.com/pxSean/lumen/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('085a905f5122e8d0da68efb13d0e7a52a84f549bc6fa967ad43d123c9d7297df')
